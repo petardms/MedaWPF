@@ -1,0 +1,1649 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="MedaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="tblBrand">
+          <Key>
+            <PropertyRef Name="braID" />
+          </Key>
+          <Property Name="braID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="braName" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="braShortName" Type="nvarchar" MaxLength="25" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblCity">
+          <Key>
+            <PropertyRef Name="ctyID" />
+          </Key>
+          <Property Name="ctyID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ctyName" Type="nvarchar" MaxLength="40" Nullable="false" />
+          <Property Name="dstID" Type="int" />
+        </EntityType>
+        <EntityType Name="tblCountry">
+          <Key>
+            <PropertyRef Name="ctrID" />
+          </Key>
+          <Property Name="ctrID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ctrName" Type="nvarchar" MaxLength="15" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblDistrict">
+          <Key>
+            <PropertyRef Name="dstID" />
+          </Key>
+          <Property Name="dstID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="dstName" Type="nvarchar" MaxLength="30" />
+          <Property Name="ctrID" Type="int" />
+        </EntityType>
+        <EntityType Name="tblHeadofficeCroatia">
+          <Key>
+            <PropertyRef Name="hdoID" />
+          </Key>
+          <Property Name="hdoID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="hdoName" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="staID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblHeadofficeSerbia">
+          <Key>
+            <PropertyRef Name="hdoID" />
+          </Key>
+          <Property Name="hdoID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="hdoName" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="staID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblHeadofficeSlovenia">
+          <Key>
+            <PropertyRef Name="hdoID" />
+          </Key>
+          <Property Name="hdoID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="hdoName" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="staID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblInstitutionCroatia">
+          <Key>
+            <PropertyRef Name="insID" />
+          </Key>
+          <Property Name="insID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="insName" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="insAddress" Type="nvarchar" MaxLength="150" />
+          <Property Name="ctyID" Type="int" Nullable="false" />
+          <Property Name="isbID" Type="int" Nullable="false" />
+          <Property Name="hdoID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblInstitutionSerbia">
+          <Key>
+            <PropertyRef Name="insID" />
+          </Key>
+          <Property Name="insID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="insName" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="insAddress" Type="nvarchar" MaxLength="150" />
+          <Property Name="ctyID" Type="int" Nullable="false" />
+          <Property Name="isbID" Type="int" Nullable="false" />
+          <Property Name="hdoID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblInstitutionSlovenia">
+          <Key>
+            <PropertyRef Name="insID" />
+          </Key>
+          <Property Name="insID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="insName" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="insAddress" Type="nvarchar" MaxLength="150" />
+          <Property Name="ctyID" Type="int" Nullable="false" />
+          <Property Name="isbID" Type="int" Nullable="false" />
+          <Property Name="hdoID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblInstitutionSubtype">
+          <Key>
+            <PropertyRef Name="isbID" />
+          </Key>
+          <Property Name="isbID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="isbName" Type="nvarchar" MaxLength="30" />
+          <Property Name="itpID" Type="int" />
+        </EntityType>
+        <EntityType Name="tblInstitutionType">
+          <Key>
+            <PropertyRef Name="itpID" />
+          </Key>
+          <Property Name="itpID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="itpName" Type="nvarchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="tblPacking">
+          <Key>
+            <PropertyRef Name="pacID" />
+          </Key>
+          <Property Name="pacID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="pacName" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="braID" Type="int" Nullable="false" />
+          <Property Name="pacTherapArea" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="tblPrimaryImport">
+          <Key>
+            <PropertyRef Name="pimID" />
+          </Key>
+          <Property Name="pimID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="pimPacking" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="monID" Type="int" Nullable="false" />
+          <Property Name="yeaID" Type="int" Nullable="false" />
+          <Property Name="pimQuantity" Type="numeric" Precision="10" Scale="0" Nullable="false" />
+          <Property Name="pimGrossSales" Type="numeric" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="pimNetSales" Type="numeric" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="pimWholesales" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="pimCountry" Type="nvarchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblPrimaryPacking">
+          <Key>
+            <PropertyRef Name="ppaID" />
+          </Key>
+          <Property Name="ppaID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="pacID" Type="int" Nullable="false" />
+          <Property Name="pimPacking" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="tblPrimaryWholesale">
+          <Key>
+            <PropertyRef Name="piwID" />
+          </Key>
+          <Property Name="piwID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="whsID" Type="int" Nullable="false" />
+          <Property Name="pimWholesale" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="pimCountry" Type="nvarchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblWholesale">
+          <Key>
+            <PropertyRef Name="whsID" />
+          </Key>
+          <Property Name="whsID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="whsName" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="ctrID" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Meda.dbo.Country' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Country">
+          <Key>
+            <PropertyRef Name="country_id" />
+            <PropertyRef Name="country" />
+          </Key>
+          <Property Name="country_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="country" Type="nvarchar" MaxLength="15" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Meda.dbo.District' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="District">
+          <Key>
+            <PropertyRef Name="district_id" />
+          </Key>
+          <Property Name="district_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="district" Type="nvarchar" MaxLength="30" />
+          <Property Name="country_id" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Meda.dbo.Product' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="packing_id" />
+            <PropertyRef Name="Packing" />
+            <PropertyRef Name="brand_id" />
+            <PropertyRef Name="Brand" />
+            <PropertyRef Name="TargetStatus" />
+          </Key>
+          <Property Name="packing_id" Type="int" Nullable="false" />
+          <Property Name="Packing" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="brand_id" Type="int" Nullable="false" />
+          <Property Name="Brand" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="THERAP_AREA" Type="nvarchar" MaxLength="100" />
+          <Property Name="TargetStatus" Type="varchar" MaxLength="6" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Meda.dbo.Region' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Region">
+          <Key>
+            <PropertyRef Name="city_id" />
+            <PropertyRef Name="city" />
+            <PropertyRef Name="country_id" />
+          </Key>
+          <Property Name="city_id" Type="int" Nullable="false" />
+          <Property Name="city" Type="nvarchar" MaxLength="40" Nullable="false" />
+          <Property Name="district_id" Type="int" />
+          <Property Name="country_id" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Meda.dbo.vwInstitution' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vwInstitution">
+          <Key>
+            <PropertyRef Name="insID" />
+            <PropertyRef Name="insName" />
+            <PropertyRef Name="ctyName" />
+            <PropertyRef Name="hdoName" />
+            <PropertyRef Name="ctyID" />
+            <PropertyRef Name="isbID" />
+            <PropertyRef Name="itpID" />
+            <PropertyRef Name="hdoID" />
+            <PropertyRef Name="ctrID" />
+          </Key>
+          <Property Name="insID" Type="int" Nullable="false" />
+          <Property Name="insName" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="ctyName" Type="nvarchar" MaxLength="40" Nullable="false" />
+          <Property Name="insAddress" Type="nvarchar" MaxLength="150" />
+          <Property Name="isbName" Type="nvarchar" MaxLength="30" />
+          <Property Name="itpName" Type="nvarchar" MaxLength="30" />
+          <Property Name="hdoName" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="ctyID" Type="int" Nullable="false" />
+          <Property Name="isbID" Type="int" Nullable="false" />
+          <Property Name="itpID" Type="int" Nullable="false" />
+          <Property Name="hdoID" Type="int" Nullable="false" />
+          <Property Name="ctrID" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Meda.dbo.vwInstitutionCroatia' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vwInstitutionCroatia">
+          <Key>
+            <PropertyRef Name="insID" />
+            <PropertyRef Name="insName" />
+            <PropertyRef Name="ctyName" />
+            <PropertyRef Name="hdoName" />
+            <PropertyRef Name="ctyID" />
+            <PropertyRef Name="isbID" />
+            <PropertyRef Name="itpID" />
+            <PropertyRef Name="hdoID" />
+          </Key>
+          <Property Name="insID" Type="int" Nullable="false" />
+          <Property Name="insName" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="ctyName" Type="nvarchar" MaxLength="40" Nullable="false" />
+          <Property Name="insAddress" Type="nvarchar" MaxLength="150" />
+          <Property Name="isbName" Type="nvarchar" MaxLength="30" />
+          <Property Name="itpName" Type="nvarchar" MaxLength="30" />
+          <Property Name="hdoName" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="ctyID" Type="int" Nullable="false" />
+          <Property Name="isbID" Type="int" Nullable="false" />
+          <Property Name="itpID" Type="int" Nullable="false" />
+          <Property Name="hdoID" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Meda.dbo.vwInstitutionSerbia' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vwInstitutionSerbia">
+          <Key>
+            <PropertyRef Name="insID" />
+            <PropertyRef Name="insName" />
+            <PropertyRef Name="ctyName" />
+            <PropertyRef Name="hdoName" />
+            <PropertyRef Name="ctyID" />
+            <PropertyRef Name="isbID" />
+            <PropertyRef Name="itpID" />
+            <PropertyRef Name="hdoID" />
+          </Key>
+          <Property Name="insID" Type="int" Nullable="false" />
+          <Property Name="insName" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="ctyName" Type="nvarchar" MaxLength="40" Nullable="false" />
+          <Property Name="insAddress" Type="nvarchar" MaxLength="150" />
+          <Property Name="isbName" Type="nvarchar" MaxLength="30" />
+          <Property Name="itpName" Type="nvarchar" MaxLength="30" />
+          <Property Name="hdoName" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="ctyID" Type="int" Nullable="false" />
+          <Property Name="isbID" Type="int" Nullable="false" />
+          <Property Name="itpID" Type="int" Nullable="false" />
+          <Property Name="hdoID" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Meda.dbo.vwInstitutionSlovenia' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vwInstitutionSlovenia">
+          <Key>
+            <PropertyRef Name="insID" />
+            <PropertyRef Name="insName" />
+            <PropertyRef Name="ctyName" />
+            <PropertyRef Name="hdoName" />
+            <PropertyRef Name="ctyID" />
+            <PropertyRef Name="isbID" />
+            <PropertyRef Name="itpID" />
+            <PropertyRef Name="hdoID" />
+          </Key>
+          <Property Name="insID" Type="int" Nullable="false" />
+          <Property Name="insName" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="ctyName" Type="nvarchar" MaxLength="40" Nullable="false" />
+          <Property Name="insAddress" Type="nvarchar" MaxLength="150" />
+          <Property Name="isbName" Type="nvarchar" MaxLength="30" />
+          <Property Name="itpName" Type="nvarchar" MaxLength="30" />
+          <Property Name="hdoName" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="ctyID" Type="int" Nullable="false" />
+          <Property Name="isbID" Type="int" Nullable="false" />
+          <Property Name="itpID" Type="int" Nullable="false" />
+          <Property Name="hdoID" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Meda.dbo.vwPrimaryMissingPacking' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vwPrimaryMissingPacking">
+          <Key>
+            <PropertyRef Name="pimPacking" />
+          </Key>
+          <Property Name="pimPacking" Type="nvarchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Meda.dbo.vwPrimaryMissingWholesale' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vwPrimaryMissingWholesale">
+          <Key>
+            <PropertyRef Name="pimWholesales" />
+            <PropertyRef Name="pimCountry" />
+          </Key>
+          <Property Name="pimWholesales" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="pimCountry" Type="nvarchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__tblCity__dstID__09DE7BCC">
+          <End Role="tblDistrict" Type="Self.tblDistrict" Multiplicity="0..1" />
+          <End Role="tblCity" Type="Self.tblCity" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblDistrict">
+              <PropertyRef Name="dstID" />
+            </Principal>
+            <Dependent Role="tblCity">
+              <PropertyRef Name="dstID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblDistri__ctrID__0519C6AF">
+          <End Role="tblCountry" Type="Self.tblCountry" Multiplicity="0..1" />
+          <End Role="tblDistrict" Type="Self.tblDistrict" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblCountry">
+              <PropertyRef Name="ctrID" />
+            </Principal>
+            <Dependent Role="tblDistrict">
+              <PropertyRef Name="ctrID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblInstit__ctyID__31B762FC">
+          <End Role="tblCity" Type="Self.tblCity" Multiplicity="1" />
+          <End Role="tblInstitutionSerbia" Type="Self.tblInstitutionSerbia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblCity">
+              <PropertyRef Name="ctyID" />
+            </Principal>
+            <Dependent Role="tblInstitutionSerbia">
+              <PropertyRef Name="ctyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblInstit__ctyID__5EBF139D">
+          <End Role="tblCity" Type="Self.tblCity" Multiplicity="1" />
+          <End Role="tblInstitutionCroatia" Type="Self.tblInstitutionCroatia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblCity">
+              <PropertyRef Name="ctyID" />
+            </Principal>
+            <Dependent Role="tblInstitutionCroatia">
+              <PropertyRef Name="ctyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblInstit__ctyID__656C112C">
+          <End Role="tblCity" Type="Self.tblCity" Multiplicity="1" />
+          <End Role="tblInstitutionSlovenia" Type="Self.tblInstitutionSlovenia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblCity">
+              <PropertyRef Name="ctyID" />
+            </Principal>
+            <Dependent Role="tblInstitutionSlovenia">
+              <PropertyRef Name="ctyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblInstit__hdoID__339FAB6E">
+          <End Role="tblHeadofficeSerbia" Type="Self.tblHeadofficeSerbia" Multiplicity="1" />
+          <End Role="tblInstitutionSerbia" Type="Self.tblInstitutionSerbia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblHeadofficeSerbia">
+              <PropertyRef Name="hdoID" />
+            </Principal>
+            <Dependent Role="tblInstitutionSerbia">
+              <PropertyRef Name="hdoID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblInstit__hdoID__60A75C0F">
+          <End Role="tblHeadofficeCroatia" Type="Self.tblHeadofficeCroatia" Multiplicity="1" />
+          <End Role="tblInstitutionCroatia" Type="Self.tblInstitutionCroatia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblHeadofficeCroatia">
+              <PropertyRef Name="hdoID" />
+            </Principal>
+            <Dependent Role="tblInstitutionCroatia">
+              <PropertyRef Name="hdoID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblInstit__hdoID__6754599E">
+          <End Role="tblHeadofficeSlovenia" Type="Self.tblHeadofficeSlovenia" Multiplicity="1" />
+          <End Role="tblInstitutionSlovenia" Type="Self.tblInstitutionSlovenia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblHeadofficeSlovenia">
+              <PropertyRef Name="hdoID" />
+            </Principal>
+            <Dependent Role="tblInstitutionSlovenia">
+              <PropertyRef Name="hdoID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblInstit__isbID__32AB8735">
+          <End Role="tblInstitutionSubtype" Type="Self.tblInstitutionSubtype" Multiplicity="1" />
+          <End Role="tblInstitutionSerbia" Type="Self.tblInstitutionSerbia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblInstitutionSubtype">
+              <PropertyRef Name="isbID" />
+            </Principal>
+            <Dependent Role="tblInstitutionSerbia">
+              <PropertyRef Name="isbID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblInstit__isbID__5FB337D6">
+          <End Role="tblInstitutionSubtype" Type="Self.tblInstitutionSubtype" Multiplicity="1" />
+          <End Role="tblInstitutionCroatia" Type="Self.tblInstitutionCroatia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblInstitutionSubtype">
+              <PropertyRef Name="isbID" />
+            </Principal>
+            <Dependent Role="tblInstitutionCroatia">
+              <PropertyRef Name="isbID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblInstit__isbID__66603565">
+          <End Role="tblInstitutionSubtype" Type="Self.tblInstitutionSubtype" Multiplicity="1" />
+          <End Role="tblInstitutionSlovenia" Type="Self.tblInstitutionSlovenia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblInstitutionSubtype">
+              <PropertyRef Name="isbID" />
+            </Principal>
+            <Dependent Role="tblInstitutionSlovenia">
+              <PropertyRef Name="isbID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblInstit__itpID__1273C1CD">
+          <End Role="tblInstitutionType" Type="Self.tblInstitutionType" Multiplicity="0..1" />
+          <End Role="tblInstitutionSubtype" Type="Self.tblInstitutionSubtype" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblInstitutionType">
+              <PropertyRef Name="itpID" />
+            </Principal>
+            <Dependent Role="tblInstitutionSubtype">
+              <PropertyRef Name="itpID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblPackin__braID__45BE5BA9">
+          <End Role="tblBrand" Type="Self.tblBrand" Multiplicity="1" />
+          <End Role="tblPacking" Type="Self.tblPacking" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblBrand">
+              <PropertyRef Name="braID" />
+            </Principal>
+            <Dependent Role="tblPacking">
+              <PropertyRef Name="braID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblPrimar__pacID__540C7B00">
+          <End Role="tblPacking" Type="Self.tblPacking" Multiplicity="1" />
+          <End Role="tblPrimaryPacking" Type="Self.tblPrimaryPacking" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblPacking">
+              <PropertyRef Name="pacID" />
+            </Principal>
+            <Dependent Role="tblPrimaryPacking">
+              <PropertyRef Name="pacID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblPrimar__whsID__5D95E53A">
+          <End Role="tblWholesale" Type="Self.tblWholesale" Multiplicity="1" />
+          <End Role="tblPrimaryWholesale" Type="Self.tblPrimaryWholesale" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblWholesale">
+              <PropertyRef Name="whsID" />
+            </Principal>
+            <Dependent Role="tblPrimaryWholesale">
+              <PropertyRef Name="whsID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblWholes__ctrID__4B7734FF">
+          <End Role="tblCountry" Type="Self.tblCountry" Multiplicity="1" />
+          <End Role="tblWholesale" Type="Self.tblWholesale" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblCountry">
+              <PropertyRef Name="ctrID" />
+            </Principal>
+            <Dependent Role="tblWholesale">
+              <PropertyRef Name="ctrID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="MedaModelStoreContainer">
+          <EntitySet Name="tblBrand" EntityType="Self.tblBrand" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblCity" EntityType="Self.tblCity" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblCountry" EntityType="Self.tblCountry" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblDistrict" EntityType="Self.tblDistrict" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblHeadofficeCroatia" EntityType="Self.tblHeadofficeCroatia" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblHeadofficeSerbia" EntityType="Self.tblHeadofficeSerbia" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblHeadofficeSlovenia" EntityType="Self.tblHeadofficeSlovenia" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblInstitutionCroatia" EntityType="Self.tblInstitutionCroatia" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblInstitutionSerbia" EntityType="Self.tblInstitutionSerbia" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblInstitutionSlovenia" EntityType="Self.tblInstitutionSlovenia" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblInstitutionSubtype" EntityType="Self.tblInstitutionSubtype" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblInstitutionType" EntityType="Self.tblInstitutionType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblPacking" EntityType="Self.tblPacking" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblPrimaryImport" EntityType="Self.tblPrimaryImport" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblPrimaryPacking" EntityType="Self.tblPrimaryPacking" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblPrimaryWholesale" EntityType="Self.tblPrimaryWholesale" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblWholesale" EntityType="Self.tblWholesale" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Country" EntityType="Self.Country" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Country].[country_id] AS [country_id], 
+    [Country].[country] AS [country]
+    FROM [dbo].[Country] AS [Country]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="District" EntityType="Self.District" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [District].[district_id] AS [district_id], 
+    [District].[district] AS [district], 
+    [District].[country_id] AS [country_id]
+    FROM [dbo].[District] AS [District]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Product" EntityType="Self.Product" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Product].[packing_id] AS [packing_id], 
+    [Product].[Packing] AS [Packing], 
+    [Product].[brand_id] AS [brand_id], 
+    [Product].[Brand] AS [Brand], 
+    [Product].[THERAP_AREA] AS [THERAP_AREA], 
+    [Product].[TargetStatus] AS [TargetStatus]
+    FROM [dbo].[Product] AS [Product]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Region" EntityType="Self.Region" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Region].[city_id] AS [city_id], 
+    [Region].[city] AS [city], 
+    [Region].[district_id] AS [district_id], 
+    [Region].[country_id] AS [country_id]
+    FROM [dbo].[Region] AS [Region]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vwInstitution" EntityType="Self.vwInstitution" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vwInstitution].[insID] AS [insID], 
+    [vwInstitution].[insName] AS [insName], 
+    [vwInstitution].[ctyName] AS [ctyName], 
+    [vwInstitution].[insAddress] AS [insAddress], 
+    [vwInstitution].[isbName] AS [isbName], 
+    [vwInstitution].[itpName] AS [itpName], 
+    [vwInstitution].[hdoName] AS [hdoName], 
+    [vwInstitution].[ctyID] AS [ctyID], 
+    [vwInstitution].[isbID] AS [isbID], 
+    [vwInstitution].[itpID] AS [itpID], 
+    [vwInstitution].[hdoID] AS [hdoID], 
+    [vwInstitution].[ctrID] AS [ctrID]
+    FROM [dbo].[vwInstitution] AS [vwInstitution]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vwInstitutionCroatia" EntityType="Self.vwInstitutionCroatia" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vwInstitutionCroatia].[insID] AS [insID], 
+    [vwInstitutionCroatia].[insName] AS [insName], 
+    [vwInstitutionCroatia].[ctyName] AS [ctyName], 
+    [vwInstitutionCroatia].[insAddress] AS [insAddress], 
+    [vwInstitutionCroatia].[isbName] AS [isbName], 
+    [vwInstitutionCroatia].[itpName] AS [itpName], 
+    [vwInstitutionCroatia].[hdoName] AS [hdoName], 
+    [vwInstitutionCroatia].[ctyID] AS [ctyID], 
+    [vwInstitutionCroatia].[isbID] AS [isbID], 
+    [vwInstitutionCroatia].[itpID] AS [itpID], 
+    [vwInstitutionCroatia].[hdoID] AS [hdoID]
+    FROM [dbo].[vwInstitutionCroatia] AS [vwInstitutionCroatia]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vwInstitutionSerbia" EntityType="Self.vwInstitutionSerbia" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vwInstitutionSerbia].[insID] AS [insID], 
+    [vwInstitutionSerbia].[insName] AS [insName], 
+    [vwInstitutionSerbia].[ctyName] AS [ctyName], 
+    [vwInstitutionSerbia].[insAddress] AS [insAddress], 
+    [vwInstitutionSerbia].[isbName] AS [isbName], 
+    [vwInstitutionSerbia].[itpName] AS [itpName], 
+    [vwInstitutionSerbia].[hdoName] AS [hdoName], 
+    [vwInstitutionSerbia].[ctyID] AS [ctyID], 
+    [vwInstitutionSerbia].[isbID] AS [isbID], 
+    [vwInstitutionSerbia].[itpID] AS [itpID], 
+    [vwInstitutionSerbia].[hdoID] AS [hdoID]
+    FROM [dbo].[vwInstitutionSerbia] AS [vwInstitutionSerbia]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vwInstitutionSlovenia" EntityType="Self.vwInstitutionSlovenia" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vwInstitutionSlovenia].[insID] AS [insID], 
+    [vwInstitutionSlovenia].[insName] AS [insName], 
+    [vwInstitutionSlovenia].[ctyName] AS [ctyName], 
+    [vwInstitutionSlovenia].[insAddress] AS [insAddress], 
+    [vwInstitutionSlovenia].[isbName] AS [isbName], 
+    [vwInstitutionSlovenia].[itpName] AS [itpName], 
+    [vwInstitutionSlovenia].[hdoName] AS [hdoName], 
+    [vwInstitutionSlovenia].[ctyID] AS [ctyID], 
+    [vwInstitutionSlovenia].[isbID] AS [isbID], 
+    [vwInstitutionSlovenia].[itpID] AS [itpID], 
+    [vwInstitutionSlovenia].[hdoID] AS [hdoID]
+    FROM [dbo].[vwInstitutionSlovenia] AS [vwInstitutionSlovenia]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vwPrimaryMissingPacking" EntityType="Self.vwPrimaryMissingPacking" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vwPrimaryMissingPacking].[pimPacking] AS [pimPacking]
+    FROM [dbo].[vwPrimaryMissingPacking] AS [vwPrimaryMissingPacking]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vwPrimaryMissingWholesale" EntityType="Self.vwPrimaryMissingWholesale" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vwPrimaryMissingWholesale].[pimWholesales] AS [pimWholesales], 
+    [vwPrimaryMissingWholesale].[pimCountry] AS [pimCountry]
+    FROM [dbo].[vwPrimaryMissingWholesale] AS [vwPrimaryMissingWholesale]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK__tblCity__dstID__09DE7BCC" Association="Self.FK__tblCity__dstID__09DE7BCC">
+            <End Role="tblDistrict" EntitySet="tblDistrict" />
+            <End Role="tblCity" EntitySet="tblCity" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblDistri__ctrID__0519C6AF" Association="Self.FK__tblDistri__ctrID__0519C6AF">
+            <End Role="tblCountry" EntitySet="tblCountry" />
+            <End Role="tblDistrict" EntitySet="tblDistrict" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblInstit__ctyID__31B762FC" Association="Self.FK__tblInstit__ctyID__31B762FC">
+            <End Role="tblCity" EntitySet="tblCity" />
+            <End Role="tblInstitutionSerbia" EntitySet="tblInstitutionSerbia" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblInstit__ctyID__5EBF139D" Association="Self.FK__tblInstit__ctyID__5EBF139D">
+            <End Role="tblCity" EntitySet="tblCity" />
+            <End Role="tblInstitutionCroatia" EntitySet="tblInstitutionCroatia" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblInstit__ctyID__656C112C" Association="Self.FK__tblInstit__ctyID__656C112C">
+            <End Role="tblCity" EntitySet="tblCity" />
+            <End Role="tblInstitutionSlovenia" EntitySet="tblInstitutionSlovenia" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblInstit__hdoID__339FAB6E" Association="Self.FK__tblInstit__hdoID__339FAB6E">
+            <End Role="tblHeadofficeSerbia" EntitySet="tblHeadofficeSerbia" />
+            <End Role="tblInstitutionSerbia" EntitySet="tblInstitutionSerbia" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblInstit__hdoID__60A75C0F" Association="Self.FK__tblInstit__hdoID__60A75C0F">
+            <End Role="tblHeadofficeCroatia" EntitySet="tblHeadofficeCroatia" />
+            <End Role="tblInstitutionCroatia" EntitySet="tblInstitutionCroatia" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblInstit__hdoID__6754599E" Association="Self.FK__tblInstit__hdoID__6754599E">
+            <End Role="tblHeadofficeSlovenia" EntitySet="tblHeadofficeSlovenia" />
+            <End Role="tblInstitutionSlovenia" EntitySet="tblInstitutionSlovenia" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblInstit__isbID__32AB8735" Association="Self.FK__tblInstit__isbID__32AB8735">
+            <End Role="tblInstitutionSubtype" EntitySet="tblInstitutionSubtype" />
+            <End Role="tblInstitutionSerbia" EntitySet="tblInstitutionSerbia" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblInstit__isbID__5FB337D6" Association="Self.FK__tblInstit__isbID__5FB337D6">
+            <End Role="tblInstitutionSubtype" EntitySet="tblInstitutionSubtype" />
+            <End Role="tblInstitutionCroatia" EntitySet="tblInstitutionCroatia" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblInstit__isbID__66603565" Association="Self.FK__tblInstit__isbID__66603565">
+            <End Role="tblInstitutionSubtype" EntitySet="tblInstitutionSubtype" />
+            <End Role="tblInstitutionSlovenia" EntitySet="tblInstitutionSlovenia" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblInstit__itpID__1273C1CD" Association="Self.FK__tblInstit__itpID__1273C1CD">
+            <End Role="tblInstitutionType" EntitySet="tblInstitutionType" />
+            <End Role="tblInstitutionSubtype" EntitySet="tblInstitutionSubtype" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblPackin__braID__45BE5BA9" Association="Self.FK__tblPackin__braID__45BE5BA9">
+            <End Role="tblBrand" EntitySet="tblBrand" />
+            <End Role="tblPacking" EntitySet="tblPacking" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblPrimar__pacID__540C7B00" Association="Self.FK__tblPrimar__pacID__540C7B00">
+            <End Role="tblPacking" EntitySet="tblPacking" />
+            <End Role="tblPrimaryPacking" EntitySet="tblPrimaryPacking" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblPrimar__whsID__5D95E53A" Association="Self.FK__tblPrimar__whsID__5D95E53A">
+            <End Role="tblWholesale" EntitySet="tblWholesale" />
+            <End Role="tblPrimaryWholesale" EntitySet="tblPrimaryWholesale" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblWholes__ctrID__4B7734FF" Association="Self.FK__tblWholes__ctrID__4B7734FF">
+            <End Role="tblCountry" EntitySet="tblCountry" />
+            <End Role="tblWholesale" EntitySet="tblWholesale" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MedaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="tblCity">
+          <Key>
+            <PropertyRef Name="ctyID" />
+          </Key>
+          <Property Name="ctyID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ctyName" Type="String" MaxLength="40" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="dstID" Type="Int32" />
+          <NavigationProperty Name="tblDistrict" Relationship="Self.FK__tblCity__dstID__09DE7BCC" FromRole="tblCity" ToRole="tblDistrict" />
+          <NavigationProperty Name="tblInstitutionCroatias" Relationship="Self.FK__tblInstit__ctyID__5EBF139D" FromRole="tblCity" ToRole="tblInstitutionCroatia" />
+          <NavigationProperty Name="tblInstitutionSlovenias" Relationship="Self.FK__tblInstit__ctyID__656C112C" FromRole="tblCity" ToRole="tblInstitutionSlovenia" />
+          <NavigationProperty Name="tblInstitutionSerbias" Relationship="MedaModel.FK__tblInstit__ctyID__03F0984C" FromRole="tblCity" ToRole="tblInstitutionSerbia" />
+        </EntityType>
+        <EntityType Name="tblCountry">
+          <Key>
+            <PropertyRef Name="ctrID" />
+          </Key>
+          <Property Name="ctrID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ctrName" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="tblDistricts" Relationship="Self.FK__tblDistri__ctrID__0519C6AF" FromRole="tblCountry" ToRole="tblDistrict" />
+          <NavigationProperty Name="tblWholesales" Relationship="MedaModel.FK__tblWholes__ctrID__4B7734FF" FromRole="tblCountry" ToRole="tblWholesale" />
+        </EntityType>
+        <EntityType Name="tblDistrict">
+          <Key>
+            <PropertyRef Name="dstID" />
+          </Key>
+          <Property Name="dstID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="dstName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="ctrID" Type="Int32" />
+          <NavigationProperty Name="tblCities" Relationship="Self.FK__tblCity__dstID__09DE7BCC" FromRole="tblDistrict" ToRole="tblCity" />
+          <NavigationProperty Name="tblCountry" Relationship="Self.FK__tblDistri__ctrID__0519C6AF" FromRole="tblDistrict" ToRole="tblCountry" />
+        </EntityType>
+        <EntityType Name="tblHeadofficeCroatia">
+          <Key>
+            <PropertyRef Name="hdoID" />
+          </Key>
+          <Property Name="hdoID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="hdoName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="staID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="tblInstitutionCroatias" Relationship="Self.FK__tblInstit__hdoID__60A75C0F" FromRole="tblHeadofficeCroatia" ToRole="tblInstitutionCroatia" />
+        </EntityType>
+        <EntityType Name="tblHeadofficeSlovenia">
+          <Key>
+            <PropertyRef Name="hdoID" />
+          </Key>
+          <Property Name="hdoID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="hdoName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="staID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="tblInstitutionSlovenias" Relationship="Self.FK__tblInstit__hdoID__6754599E" FromRole="tblHeadofficeSlovenia" ToRole="tblInstitutionSlovenia" />
+        </EntityType>
+        <EntityType Name="tblInstitutionCroatia">
+          <Key>
+            <PropertyRef Name="insID" />
+          </Key>
+          <Property Name="insID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="insName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="insAddress" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="ctyID" Type="Int32" Nullable="false" />
+          <Property Name="isbID" Type="Int32" Nullable="false" />
+          <Property Name="hdoID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="tblCity" Relationship="Self.FK__tblInstit__ctyID__5EBF139D" FromRole="tblInstitutionCroatia" ToRole="tblCity" />
+          <NavigationProperty Name="tblHeadofficeCroatia" Relationship="Self.FK__tblInstit__hdoID__60A75C0F" FromRole="tblInstitutionCroatia" ToRole="tblHeadofficeCroatia" />
+          <NavigationProperty Name="tblInstitutionSubtype" Relationship="Self.FK__tblInstit__isbID__5FB337D6" FromRole="tblInstitutionCroatia" ToRole="tblInstitutionSubtype" />
+        </EntityType>
+        <EntityType Name="tblInstitutionSlovenia">
+          <Key>
+            <PropertyRef Name="insID" />
+          </Key>
+          <Property Name="insID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="insName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="insAddress" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="ctyID" Type="Int32" Nullable="false" />
+          <Property Name="isbID" Type="Int32" Nullable="false" />
+          <Property Name="hdoID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="tblCity" Relationship="Self.FK__tblInstit__ctyID__656C112C" FromRole="tblInstitutionSlovenia" ToRole="tblCity" />
+          <NavigationProperty Name="tblHeadofficeSlovenia" Relationship="Self.FK__tblInstit__hdoID__6754599E" FromRole="tblInstitutionSlovenia" ToRole="tblHeadofficeSlovenia" />
+          <NavigationProperty Name="tblInstitutionSubtype" Relationship="Self.FK__tblInstit__isbID__66603565" FromRole="tblInstitutionSlovenia" ToRole="tblInstitutionSubtype" />
+        </EntityType>
+        <EntityType Name="tblInstitutionSubtype">
+          <Key>
+            <PropertyRef Name="isbID" />
+          </Key>
+          <Property Name="isbID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="isbName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="itpID" Type="Int32" />
+          <NavigationProperty Name="tblInstitutionCroatias" Relationship="Self.FK__tblInstit__isbID__5FB337D6" FromRole="tblInstitutionSubtype" ToRole="tblInstitutionCroatia" />
+          <NavigationProperty Name="tblInstitutionSlovenias" Relationship="Self.FK__tblInstit__isbID__66603565" FromRole="tblInstitutionSubtype" ToRole="tblInstitutionSlovenia" />
+          <NavigationProperty Name="tblInstitutionType" Relationship="Self.FK__tblInstit__itpID__1273C1CD" FromRole="tblInstitutionSubtype" ToRole="tblInstitutionType" />
+          <NavigationProperty Name="tblInstitutionSerbias" Relationship="MedaModel.FK__tblInstit__isbID__04E4BC85" FromRole="tblInstitutionSubtype" ToRole="tblInstitutionSerbia" />
+        </EntityType>
+        <EntityType Name="tblInstitutionType">
+          <Key>
+            <PropertyRef Name="itpID" />
+          </Key>
+          <Property Name="itpID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="itpName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="tblInstitutionSubtypes" Relationship="Self.FK__tblInstit__itpID__1273C1CD" FromRole="tblInstitutionType" ToRole="tblInstitutionSubtype" />
+        </EntityType>
+        <EntityType Name="vwInstitution">
+          <Key>
+            <PropertyRef Name="insID" />
+            <PropertyRef Name="insName" />
+            <PropertyRef Name="ctyName" />
+            <PropertyRef Name="hdoName" />
+            <PropertyRef Name="ctyID" />
+            <PropertyRef Name="isbID" />
+            <PropertyRef Name="itpID" />
+            <PropertyRef Name="hdoID" />
+            <PropertyRef Name="ctrID" />
+          </Key>
+          <Property Name="insID" Type="Int32" Nullable="false" />
+          <Property Name="insName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ctyName" Type="String" MaxLength="40" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="insAddress" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="isbName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="itpName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="hdoName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ctyID" Type="Int32" Nullable="false" />
+          <Property Name="isbID" Type="Int32" Nullable="false" />
+          <Property Name="itpID" Type="Int32" Nullable="false" />
+          <Property Name="hdoID" Type="Int32" Nullable="false" />
+          <Property Name="ctrID" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="vwInstitutionCroatia">
+          <Key>
+            <PropertyRef Name="insID" />
+            <PropertyRef Name="insName" />
+            <PropertyRef Name="ctyName" />
+            <PropertyRef Name="hdoName" />
+            <PropertyRef Name="ctyID" />
+            <PropertyRef Name="isbID" />
+            <PropertyRef Name="itpID" />
+            <PropertyRef Name="hdoID" />
+          </Key>
+          <Property Name="insID" Type="Int32" Nullable="false" />
+          <Property Name="insName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ctyName" Type="String" MaxLength="40" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="insAddress" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="isbName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="itpName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="hdoName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ctyID" Type="Int32" Nullable="false" />
+          <Property Name="isbID" Type="Int32" Nullable="false" />
+          <Property Name="itpID" Type="Int32" Nullable="false" />
+          <Property Name="hdoID" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="vwInstitutionSlovenia">
+          <Key>
+            <PropertyRef Name="insID" />
+            <PropertyRef Name="insName" />
+            <PropertyRef Name="ctyName" />
+            <PropertyRef Name="hdoName" />
+            <PropertyRef Name="ctyID" />
+            <PropertyRef Name="isbID" />
+            <PropertyRef Name="itpID" />
+            <PropertyRef Name="hdoID" />
+          </Key>
+          <Property Name="insID" Type="Int32" Nullable="false" />
+          <Property Name="insName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ctyName" Type="String" MaxLength="40" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="insAddress" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="isbName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="itpName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="hdoName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ctyID" Type="Int32" Nullable="false" />
+          <Property Name="isbID" Type="Int32" Nullable="false" />
+          <Property Name="itpID" Type="Int32" Nullable="false" />
+          <Property Name="hdoID" Type="Int32" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__tblCity__dstID__09DE7BCC">
+          <End Role="tblDistrict" Type="Self.tblDistrict" Multiplicity="0..1" />
+          <End Role="tblCity" Type="Self.tblCity" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblDistrict">
+              <PropertyRef Name="dstID" />
+            </Principal>
+            <Dependent Role="tblCity">
+              <PropertyRef Name="dstID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblInstit__ctyID__5EBF139D">
+          <End Role="tblCity" Type="Self.tblCity" Multiplicity="1" />
+          <End Role="tblInstitutionCroatia" Type="Self.tblInstitutionCroatia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblCity">
+              <PropertyRef Name="ctyID" />
+            </Principal>
+            <Dependent Role="tblInstitutionCroatia">
+              <PropertyRef Name="ctyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblInstit__ctyID__656C112C">
+          <End Role="tblCity" Type="Self.tblCity" Multiplicity="1" />
+          <End Role="tblInstitutionSlovenia" Type="Self.tblInstitutionSlovenia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblCity">
+              <PropertyRef Name="ctyID" />
+            </Principal>
+            <Dependent Role="tblInstitutionSlovenia">
+              <PropertyRef Name="ctyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblDistri__ctrID__0519C6AF">
+          <End Role="tblCountry" Type="Self.tblCountry" Multiplicity="0..1" />
+          <End Role="tblDistrict" Type="Self.tblDistrict" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblCountry">
+              <PropertyRef Name="ctrID" />
+            </Principal>
+            <Dependent Role="tblDistrict">
+              <PropertyRef Name="ctrID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblInstit__hdoID__60A75C0F">
+          <End Role="tblHeadofficeCroatia" Type="Self.tblHeadofficeCroatia" Multiplicity="1" />
+          <End Role="tblInstitutionCroatia" Type="Self.tblInstitutionCroatia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblHeadofficeCroatia">
+              <PropertyRef Name="hdoID" />
+            </Principal>
+            <Dependent Role="tblInstitutionCroatia">
+              <PropertyRef Name="hdoID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblInstit__hdoID__6754599E">
+          <End Role="tblHeadofficeSlovenia" Type="Self.tblHeadofficeSlovenia" Multiplicity="1" />
+          <End Role="tblInstitutionSlovenia" Type="Self.tblInstitutionSlovenia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblHeadofficeSlovenia">
+              <PropertyRef Name="hdoID" />
+            </Principal>
+            <Dependent Role="tblInstitutionSlovenia">
+              <PropertyRef Name="hdoID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblInstit__isbID__5FB337D6">
+          <End Role="tblInstitutionSubtype" Type="Self.tblInstitutionSubtype" Multiplicity="1" />
+          <End Role="tblInstitutionCroatia" Type="Self.tblInstitutionCroatia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblInstitutionSubtype">
+              <PropertyRef Name="isbID" />
+            </Principal>
+            <Dependent Role="tblInstitutionCroatia">
+              <PropertyRef Name="isbID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblInstit__isbID__66603565">
+          <End Role="tblInstitutionSubtype" Type="Self.tblInstitutionSubtype" Multiplicity="1" />
+          <End Role="tblInstitutionSlovenia" Type="Self.tblInstitutionSlovenia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblInstitutionSubtype">
+              <PropertyRef Name="isbID" />
+            </Principal>
+            <Dependent Role="tblInstitutionSlovenia">
+              <PropertyRef Name="isbID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblInstit__itpID__1273C1CD">
+          <End Role="tblInstitutionType" Type="Self.tblInstitutionType" Multiplicity="0..1" />
+          <End Role="tblInstitutionSubtype" Type="Self.tblInstitutionSubtype" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblInstitutionType">
+              <PropertyRef Name="itpID" />
+            </Principal>
+            <Dependent Role="tblInstitutionSubtype">
+              <PropertyRef Name="itpID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="MedaEntitiesDb" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tblCities" EntityType="Self.tblCity" />
+          <EntitySet Name="tblCountries" EntityType="Self.tblCountry" />
+          <EntitySet Name="tblDistricts" EntityType="Self.tblDistrict" />
+          <EntitySet Name="tblHeadofficeCroatias" EntityType="Self.tblHeadofficeCroatia" />
+          <EntitySet Name="tblHeadofficeSlovenias" EntityType="Self.tblHeadofficeSlovenia" />
+          <EntitySet Name="tblInstitutionCroatias" EntityType="Self.tblInstitutionCroatia" />
+          <EntitySet Name="tblInstitutionSlovenias" EntityType="Self.tblInstitutionSlovenia" />
+          <EntitySet Name="tblInstitutionSubtypes" EntityType="Self.tblInstitutionSubtype" />
+          <EntitySet Name="tblInstitutionTypes" EntityType="Self.tblInstitutionType" />
+          <EntitySet Name="vwInstitutions" EntityType="Self.vwInstitution" />
+          <EntitySet Name="vwInstitutionCroatias" EntityType="Self.vwInstitutionCroatia" />
+          <EntitySet Name="vwInstitutionSlovenias" EntityType="Self.vwInstitutionSlovenia" />
+          <AssociationSet Name="FK__tblCity__dstID__09DE7BCC" Association="Self.FK__tblCity__dstID__09DE7BCC">
+            <End Role="tblDistrict" EntitySet="tblDistricts" />
+            <End Role="tblCity" EntitySet="tblCities" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblInstit__ctyID__5EBF139D" Association="Self.FK__tblInstit__ctyID__5EBF139D">
+            <End Role="tblCity" EntitySet="tblCities" />
+            <End Role="tblInstitutionCroatia" EntitySet="tblInstitutionCroatias" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblInstit__ctyID__656C112C" Association="Self.FK__tblInstit__ctyID__656C112C">
+            <End Role="tblCity" EntitySet="tblCities" />
+            <End Role="tblInstitutionSlovenia" EntitySet="tblInstitutionSlovenias" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblDistri__ctrID__0519C6AF" Association="Self.FK__tblDistri__ctrID__0519C6AF">
+            <End Role="tblCountry" EntitySet="tblCountries" />
+            <End Role="tblDistrict" EntitySet="tblDistricts" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblInstit__hdoID__60A75C0F" Association="Self.FK__tblInstit__hdoID__60A75C0F">
+            <End Role="tblHeadofficeCroatia" EntitySet="tblHeadofficeCroatias" />
+            <End Role="tblInstitutionCroatia" EntitySet="tblInstitutionCroatias" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblInstit__hdoID__6754599E" Association="Self.FK__tblInstit__hdoID__6754599E">
+            <End Role="tblHeadofficeSlovenia" EntitySet="tblHeadofficeSlovenias" />
+            <End Role="tblInstitutionSlovenia" EntitySet="tblInstitutionSlovenias" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblInstit__isbID__5FB337D6" Association="Self.FK__tblInstit__isbID__5FB337D6">
+            <End Role="tblInstitutionSubtype" EntitySet="tblInstitutionSubtypes" />
+            <End Role="tblInstitutionCroatia" EntitySet="tblInstitutionCroatias" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblInstit__isbID__66603565" Association="Self.FK__tblInstit__isbID__66603565">
+            <End Role="tblInstitutionSubtype" EntitySet="tblInstitutionSubtypes" />
+            <End Role="tblInstitutionSlovenia" EntitySet="tblInstitutionSlovenias" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblInstit__itpID__1273C1CD" Association="Self.FK__tblInstit__itpID__1273C1CD">
+            <End Role="tblInstitutionType" EntitySet="tblInstitutionTypes" />
+            <End Role="tblInstitutionSubtype" EntitySet="tblInstitutionSubtypes" />
+          </AssociationSet>
+          <EntitySet Name="tblHeadofficeSerbias" EntityType="MedaModel.tblHeadofficeSerbia" />
+          <EntitySet Name="tblInstitutionSerbias" EntityType="MedaModel.tblInstitutionSerbia" />
+          <AssociationSet Name="FK__tblInstit__ctyID__03F0984C" Association="MedaModel.FK__tblInstit__ctyID__03F0984C">
+            <End Role="tblCity" EntitySet="tblCities" />
+            <End Role="tblInstitutionSerbia" EntitySet="tblInstitutionSerbias" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblInstit__hdoID__05D8E0BE" Association="MedaModel.FK__tblInstit__hdoID__05D8E0BE">
+            <End Role="tblHeadofficeSerbia" EntitySet="tblHeadofficeSerbias" />
+            <End Role="tblInstitutionSerbia" EntitySet="tblInstitutionSerbias" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblInstit__isbID__04E4BC85" Association="MedaModel.FK__tblInstit__isbID__04E4BC85">
+            <End Role="tblInstitutionSubtype" EntitySet="tblInstitutionSubtypes" />
+            <End Role="tblInstitutionSerbia" EntitySet="tblInstitutionSerbias" />
+          </AssociationSet>
+          <EntitySet Name="vwInstitutionSerbias" EntityType="MedaModel.vwInstitutionSerbia" />
+          <EntitySet Name="tblBrands" EntityType="MedaModel.tblBrand" />
+          <EntitySet Name="tblPackings" EntityType="MedaModel.tblPacking" />
+          <EntitySet Name="tblPrimaryImports" EntityType="MedaModel.tblPrimaryImport" />
+          <EntitySet Name="tblPrimaryPackings" EntityType="MedaModel.tblPrimaryPacking" />
+          <EntitySet Name="tblPrimaryWholesales" EntityType="MedaModel.tblPrimaryWholesale" />
+          <EntitySet Name="tblWholesales" EntityType="MedaModel.tblWholesale" />
+          <EntitySet Name="Countries" EntityType="MedaModel.Country" />
+          <EntitySet Name="Districts" EntityType="MedaModel.District" />
+          <EntitySet Name="Products" EntityType="MedaModel.Product" />
+          <EntitySet Name="Regions" EntityType="MedaModel.Region" />
+          <EntitySet Name="vwPrimaryMissingPackings" EntityType="MedaModel.vwPrimaryMissingPacking" />
+          <EntitySet Name="vwPrimaryMissingWholesales" EntityType="MedaModel.vwPrimaryMissingWholesale" />
+          <AssociationSet Name="FK__tblPackin__braID__45BE5BA9" Association="MedaModel.FK__tblPackin__braID__45BE5BA9">
+            <End Role="tblBrand" EntitySet="tblBrands" />
+            <End Role="tblPacking" EntitySet="tblPackings" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblWholes__ctrID__4B7734FF" Association="MedaModel.FK__tblWholes__ctrID__4B7734FF">
+            <End Role="tblCountry" EntitySet="tblCountries" />
+            <End Role="tblWholesale" EntitySet="tblWholesales" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblPrimar__pacID__540C7B00" Association="MedaModel.FK__tblPrimar__pacID__540C7B00">
+            <End Role="tblPacking" EntitySet="tblPackings" />
+            <End Role="tblPrimaryPacking" EntitySet="tblPrimaryPackings" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblPrimar__whsID__5D95E53A" Association="MedaModel.FK__tblPrimar__whsID__5D95E53A">
+            <End Role="tblWholesale" EntitySet="tblWholesales" />
+            <End Role="tblPrimaryWholesale" EntitySet="tblPrimaryWholesales" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="tblHeadofficeSerbia">
+          <Key>
+            <PropertyRef Name="hdoID" />
+          </Key>
+          <Property Name="hdoID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="hdoName" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="staID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="tblInstitutionSerbias" Relationship="MedaModel.FK__tblInstit__hdoID__05D8E0BE" FromRole="tblHeadofficeSerbia" ToRole="tblInstitutionSerbia" />
+        </EntityType>
+        <EntityType Name="tblInstitutionSerbia">
+          <Key>
+            <PropertyRef Name="insID" />
+          </Key>
+          <Property Name="insID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="insName" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="insAddress" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="ctyID" Type="Int32" Nullable="false" />
+          <Property Name="isbID" Type="Int32" Nullable="false" />
+          <Property Name="hdoID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="tblCity" Relationship="MedaModel.FK__tblInstit__ctyID__03F0984C" FromRole="tblInstitutionSerbia" ToRole="tblCity" />
+          <NavigationProperty Name="tblHeadofficeSerbia" Relationship="MedaModel.FK__tblInstit__hdoID__05D8E0BE" FromRole="tblInstitutionSerbia" ToRole="tblHeadofficeSerbia" />
+          <NavigationProperty Name="tblInstitutionSubtype" Relationship="MedaModel.FK__tblInstit__isbID__04E4BC85" FromRole="tblInstitutionSerbia" ToRole="tblInstitutionSubtype" />
+        </EntityType>
+        <Association Name="FK__tblInstit__ctyID__03F0984C">
+          <End Type="MedaModel.tblCity" Role="tblCity" Multiplicity="1" />
+          <End Type="MedaModel.tblInstitutionSerbia" Role="tblInstitutionSerbia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblCity">
+              <PropertyRef Name="ctyID" />
+            </Principal>
+            <Dependent Role="tblInstitutionSerbia">
+              <PropertyRef Name="ctyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblInstit__hdoID__05D8E0BE">
+          <End Type="MedaModel.tblHeadofficeSerbia" Role="tblHeadofficeSerbia" Multiplicity="1" />
+          <End Type="MedaModel.tblInstitutionSerbia" Role="tblInstitutionSerbia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblHeadofficeSerbia">
+              <PropertyRef Name="hdoID" />
+            </Principal>
+            <Dependent Role="tblInstitutionSerbia">
+              <PropertyRef Name="hdoID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblInstit__isbID__04E4BC85">
+          <End Type="MedaModel.tblInstitutionSubtype" Role="tblInstitutionSubtype" Multiplicity="1" />
+          <End Type="MedaModel.tblInstitutionSerbia" Role="tblInstitutionSerbia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblInstitutionSubtype">
+              <PropertyRef Name="isbID" />
+            </Principal>
+            <Dependent Role="tblInstitutionSerbia">
+              <PropertyRef Name="isbID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="vwInstitutionSerbia">
+          <Key>
+            <PropertyRef Name="insID" />
+            <PropertyRef Name="insName" />
+            <PropertyRef Name="ctyName" />
+            <PropertyRef Name="hdoName" />
+            <PropertyRef Name="ctyID" />
+            <PropertyRef Name="isbID" />
+            <PropertyRef Name="itpID" />
+            <PropertyRef Name="hdoID" />
+          </Key>
+          <Property Name="insID" Type="Int32" Nullable="false" />
+          <Property Name="insName" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="ctyName" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="insAddress" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="isbName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="itpName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="hdoName" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="ctyID" Type="Int32" Nullable="false" />
+          <Property Name="isbID" Type="Int32" Nullable="false" />
+          <Property Name="itpID" Type="Int32" Nullable="false" />
+          <Property Name="hdoID" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblBrand">
+          <Key>
+            <PropertyRef Name="braID" />
+          </Key>
+          <Property Name="braID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="braName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="braShortName" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="tblPackings" Relationship="MedaModel.FK__tblPackin__braID__45BE5BA9" FromRole="tblBrand" ToRole="tblPacking" />
+        </EntityType>
+        <EntityType Name="tblPacking">
+          <Key>
+            <PropertyRef Name="pacID" />
+          </Key>
+          <Property Name="pacID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="pacName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="braID" Type="Int32" Nullable="false" />
+          <Property Name="pacTherapArea" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="tblBrand" Relationship="MedaModel.FK__tblPackin__braID__45BE5BA9" FromRole="tblPacking" ToRole="tblBrand" />
+          <NavigationProperty Name="tblPrimaryPackings" Relationship="MedaModel.FK__tblPrimar__pacID__540C7B00" FromRole="tblPacking" ToRole="tblPrimaryPacking" />
+        </EntityType>
+        <EntityType Name="tblPrimaryImport">
+          <Key>
+            <PropertyRef Name="pimID" />
+          </Key>
+          <Property Name="pimID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="pimPacking" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="monID" Type="Int32" Nullable="false" />
+          <Property Name="yeaID" Type="Int32" Nullable="false" />
+          <Property Name="pimQuantity" Type="Decimal" Nullable="false" Precision="10" Scale="0" />
+          <Property Name="pimGrossSales" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+          <Property Name="pimNetSales" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+          <Property Name="pimWholesales" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="pimCountry" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tblPrimaryPacking">
+          <Key>
+            <PropertyRef Name="ppaID" />
+          </Key>
+          <Property Name="ppaID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="pacID" Type="Int32" Nullable="false" />
+          <Property Name="pimPacking" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="tblPacking" Relationship="MedaModel.FK__tblPrimar__pacID__540C7B00" FromRole="tblPrimaryPacking" ToRole="tblPacking" />
+        </EntityType>
+        <EntityType Name="tblPrimaryWholesale">
+          <Key>
+            <PropertyRef Name="piwID" />
+          </Key>
+          <Property Name="piwID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="whsID" Type="Int32" Nullable="false" />
+          <Property Name="pimWholesale" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="pimCountry" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="tblWholesale" Relationship="MedaModel.FK__tblPrimar__whsID__5D95E53A" FromRole="tblPrimaryWholesale" ToRole="tblWholesale" />
+        </EntityType>
+        <EntityType Name="tblWholesale">
+          <Key>
+            <PropertyRef Name="whsID" />
+          </Key>
+          <Property Name="whsID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="whsName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ctrID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="tblCountry" Relationship="MedaModel.FK__tblWholes__ctrID__4B7734FF" FromRole="tblWholesale" ToRole="tblCountry" />
+          <NavigationProperty Name="tblPrimaryWholesales" Relationship="MedaModel.FK__tblPrimar__whsID__5D95E53A" FromRole="tblWholesale" ToRole="tblPrimaryWholesale" />
+        </EntityType>
+        <EntityType Name="Country">
+          <Key>
+            <PropertyRef Name="country_id" />
+            <PropertyRef Name="country1" />
+          </Key>
+          <Property Name="country_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="country1" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="District">
+          <Key>
+            <PropertyRef Name="district_id" />
+          </Key>
+          <Property Name="district_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="district1" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="country_id" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="packing_id" />
+            <PropertyRef Name="Packing" />
+            <PropertyRef Name="brand_id" />
+            <PropertyRef Name="Brand" />
+            <PropertyRef Name="TargetStatus" />
+          </Key>
+          <Property Name="packing_id" Type="Int32" Nullable="false" />
+          <Property Name="Packing" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="brand_id" Type="Int32" Nullable="false" />
+          <Property Name="Brand" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="THERAP_AREA" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="TargetStatus" Type="String" Nullable="false" MaxLength="6" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Region">
+          <Key>
+            <PropertyRef Name="city_id" />
+            <PropertyRef Name="city" />
+            <PropertyRef Name="country_id" />
+          </Key>
+          <Property Name="city_id" Type="Int32" Nullable="false" />
+          <Property Name="city" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="district_id" Type="Int32" />
+          <Property Name="country_id" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="vwPrimaryMissingPacking">
+          <Key>
+            <PropertyRef Name="pimPacking" />
+          </Key>
+          <Property Name="pimPacking" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="vwPrimaryMissingWholesale">
+          <Key>
+            <PropertyRef Name="pimWholesales" />
+            <PropertyRef Name="pimCountry" />
+          </Key>
+          <Property Name="pimWholesales" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="pimCountry" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <Association Name="FK__tblPackin__braID__45BE5BA9">
+          <End Type="MedaModel.tblBrand" Role="tblBrand" Multiplicity="1" />
+          <End Type="MedaModel.tblPacking" Role="tblPacking" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblBrand">
+              <PropertyRef Name="braID" />
+            </Principal>
+            <Dependent Role="tblPacking">
+              <PropertyRef Name="braID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblWholes__ctrID__4B7734FF">
+          <End Type="MedaModel.tblCountry" Role="tblCountry" Multiplicity="1" />
+          <End Type="MedaModel.tblWholesale" Role="tblWholesale" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblCountry">
+              <PropertyRef Name="ctrID" />
+            </Principal>
+            <Dependent Role="tblWholesale">
+              <PropertyRef Name="ctrID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblPrimar__pacID__540C7B00">
+          <End Type="MedaModel.tblPacking" Role="tblPacking" Multiplicity="1" />
+          <End Type="MedaModel.tblPrimaryPacking" Role="tblPrimaryPacking" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblPacking">
+              <PropertyRef Name="pacID" />
+            </Principal>
+            <Dependent Role="tblPrimaryPacking">
+              <PropertyRef Name="pacID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblPrimar__whsID__5D95E53A">
+          <End Type="MedaModel.tblWholesale" Role="tblWholesale" Multiplicity="1" />
+          <End Type="MedaModel.tblPrimaryWholesale" Role="tblPrimaryWholesale" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblWholesale">
+              <PropertyRef Name="whsID" />
+            </Principal>
+            <Dependent Role="tblPrimaryWholesale">
+              <PropertyRef Name="whsID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MedaModelStoreContainer" CdmEntityContainer="MedaEntitiesDb">
+          <EntitySetMapping Name="tblCities">
+            <EntityTypeMapping TypeName="MedaModel.tblCity">
+              <MappingFragment StoreEntitySet="tblCity">
+                <ScalarProperty Name="ctyID" ColumnName="ctyID" />
+                <ScalarProperty Name="ctyName" ColumnName="ctyName" />
+                <ScalarProperty Name="dstID" ColumnName="dstID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblCountries">
+            <EntityTypeMapping TypeName="MedaModel.tblCountry">
+              <MappingFragment StoreEntitySet="tblCountry">
+                <ScalarProperty Name="ctrID" ColumnName="ctrID" />
+                <ScalarProperty Name="ctrName" ColumnName="ctrName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblDistricts">
+            <EntityTypeMapping TypeName="MedaModel.tblDistrict">
+              <MappingFragment StoreEntitySet="tblDistrict">
+                <ScalarProperty Name="dstID" ColumnName="dstID" />
+                <ScalarProperty Name="dstName" ColumnName="dstName" />
+                <ScalarProperty Name="ctrID" ColumnName="ctrID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblHeadofficeCroatias">
+            <EntityTypeMapping TypeName="MedaModel.tblHeadofficeCroatia">
+              <MappingFragment StoreEntitySet="tblHeadofficeCroatia">
+                <ScalarProperty Name="hdoID" ColumnName="hdoID" />
+                <ScalarProperty Name="hdoName" ColumnName="hdoName" />
+                <ScalarProperty Name="staID" ColumnName="staID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblHeadofficeSlovenias">
+            <EntityTypeMapping TypeName="MedaModel.tblHeadofficeSlovenia">
+              <MappingFragment StoreEntitySet="tblHeadofficeSlovenia">
+                <ScalarProperty Name="hdoID" ColumnName="hdoID" />
+                <ScalarProperty Name="hdoName" ColumnName="hdoName" />
+                <ScalarProperty Name="staID" ColumnName="staID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblInstitutionCroatias">
+            <EntityTypeMapping TypeName="MedaModel.tblInstitutionCroatia">
+              <MappingFragment StoreEntitySet="tblInstitutionCroatia">
+                <ScalarProperty Name="insID" ColumnName="insID" />
+                <ScalarProperty Name="insName" ColumnName="insName" />
+                <ScalarProperty Name="insAddress" ColumnName="insAddress" />
+                <ScalarProperty Name="ctyID" ColumnName="ctyID" />
+                <ScalarProperty Name="isbID" ColumnName="isbID" />
+                <ScalarProperty Name="hdoID" ColumnName="hdoID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblInstitutionSlovenias">
+            <EntityTypeMapping TypeName="MedaModel.tblInstitutionSlovenia">
+              <MappingFragment StoreEntitySet="tblInstitutionSlovenia">
+                <ScalarProperty Name="insID" ColumnName="insID" />
+                <ScalarProperty Name="insName" ColumnName="insName" />
+                <ScalarProperty Name="insAddress" ColumnName="insAddress" />
+                <ScalarProperty Name="ctyID" ColumnName="ctyID" />
+                <ScalarProperty Name="isbID" ColumnName="isbID" />
+                <ScalarProperty Name="hdoID" ColumnName="hdoID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblInstitutionSubtypes">
+            <EntityTypeMapping TypeName="MedaModel.tblInstitutionSubtype">
+              <MappingFragment StoreEntitySet="tblInstitutionSubtype">
+                <ScalarProperty Name="isbID" ColumnName="isbID" />
+                <ScalarProperty Name="isbName" ColumnName="isbName" />
+                <ScalarProperty Name="itpID" ColumnName="itpID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblInstitutionTypes">
+            <EntityTypeMapping TypeName="MedaModel.tblInstitutionType">
+              <MappingFragment StoreEntitySet="tblInstitutionType">
+                <ScalarProperty Name="itpID" ColumnName="itpID" />
+                <ScalarProperty Name="itpName" ColumnName="itpName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vwInstitutions">
+            <EntityTypeMapping TypeName="MedaModel.vwInstitution">
+              <MappingFragment StoreEntitySet="vwInstitution">
+                <ScalarProperty Name="insID" ColumnName="insID" />
+                <ScalarProperty Name="insName" ColumnName="insName" />
+                <ScalarProperty Name="ctyName" ColumnName="ctyName" />
+                <ScalarProperty Name="insAddress" ColumnName="insAddress" />
+                <ScalarProperty Name="isbName" ColumnName="isbName" />
+                <ScalarProperty Name="itpName" ColumnName="itpName" />
+                <ScalarProperty Name="hdoName" ColumnName="hdoName" />
+                <ScalarProperty Name="ctyID" ColumnName="ctyID" />
+                <ScalarProperty Name="isbID" ColumnName="isbID" />
+                <ScalarProperty Name="itpID" ColumnName="itpID" />
+                <ScalarProperty Name="hdoID" ColumnName="hdoID" />
+                <ScalarProperty Name="ctrID" ColumnName="ctrID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vwInstitutionCroatias">
+            <EntityTypeMapping TypeName="MedaModel.vwInstitutionCroatia">
+              <MappingFragment StoreEntitySet="vwInstitutionCroatia">
+                <ScalarProperty Name="insID" ColumnName="insID" />
+                <ScalarProperty Name="insName" ColumnName="insName" />
+                <ScalarProperty Name="ctyName" ColumnName="ctyName" />
+                <ScalarProperty Name="insAddress" ColumnName="insAddress" />
+                <ScalarProperty Name="isbName" ColumnName="isbName" />
+                <ScalarProperty Name="itpName" ColumnName="itpName" />
+                <ScalarProperty Name="hdoName" ColumnName="hdoName" />
+                <ScalarProperty Name="ctyID" ColumnName="ctyID" />
+                <ScalarProperty Name="isbID" ColumnName="isbID" />
+                <ScalarProperty Name="itpID" ColumnName="itpID" />
+                <ScalarProperty Name="hdoID" ColumnName="hdoID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vwInstitutionSlovenias">
+            <EntityTypeMapping TypeName="MedaModel.vwInstitutionSlovenia">
+              <MappingFragment StoreEntitySet="vwInstitutionSlovenia">
+                <ScalarProperty Name="insID" ColumnName="insID" />
+                <ScalarProperty Name="insName" ColumnName="insName" />
+                <ScalarProperty Name="ctyName" ColumnName="ctyName" />
+                <ScalarProperty Name="insAddress" ColumnName="insAddress" />
+                <ScalarProperty Name="isbName" ColumnName="isbName" />
+                <ScalarProperty Name="itpName" ColumnName="itpName" />
+                <ScalarProperty Name="hdoName" ColumnName="hdoName" />
+                <ScalarProperty Name="ctyID" ColumnName="ctyID" />
+                <ScalarProperty Name="isbID" ColumnName="isbID" />
+                <ScalarProperty Name="itpID" ColumnName="itpID" />
+                <ScalarProperty Name="hdoID" ColumnName="hdoID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblHeadofficeSerbias">
+            <EntityTypeMapping TypeName="MedaModel.tblHeadofficeSerbia">
+              <MappingFragment StoreEntitySet="tblHeadofficeSerbia">
+                <ScalarProperty Name="staID" ColumnName="staID" />
+                <ScalarProperty Name="hdoName" ColumnName="hdoName" />
+                <ScalarProperty Name="hdoID" ColumnName="hdoID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblInstitutionSerbias">
+            <EntityTypeMapping TypeName="MedaModel.tblInstitutionSerbia">
+              <MappingFragment StoreEntitySet="tblInstitutionSerbia">
+                <ScalarProperty Name="hdoID" ColumnName="hdoID" />
+                <ScalarProperty Name="isbID" ColumnName="isbID" />
+                <ScalarProperty Name="ctyID" ColumnName="ctyID" />
+                <ScalarProperty Name="insAddress" ColumnName="insAddress" />
+                <ScalarProperty Name="insName" ColumnName="insName" />
+                <ScalarProperty Name="insID" ColumnName="insID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vwInstitutionSerbias">
+            <EntityTypeMapping TypeName="MedaModel.vwInstitutionSerbia">
+              <MappingFragment StoreEntitySet="vwInstitutionSerbia">
+                <ScalarProperty Name="hdoID" ColumnName="hdoID" />
+                <ScalarProperty Name="itpID" ColumnName="itpID" />
+                <ScalarProperty Name="isbID" ColumnName="isbID" />
+                <ScalarProperty Name="ctyID" ColumnName="ctyID" />
+                <ScalarProperty Name="hdoName" ColumnName="hdoName" />
+                <ScalarProperty Name="itpName" ColumnName="itpName" />
+                <ScalarProperty Name="isbName" ColumnName="isbName" />
+                <ScalarProperty Name="insAddress" ColumnName="insAddress" />
+                <ScalarProperty Name="ctyName" ColumnName="ctyName" />
+                <ScalarProperty Name="insName" ColumnName="insName" />
+                <ScalarProperty Name="insID" ColumnName="insID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblBrands">
+            <EntityTypeMapping TypeName="MedaModel.tblBrand">
+              <MappingFragment StoreEntitySet="tblBrand">
+                <ScalarProperty Name="braShortName" ColumnName="braShortName" />
+                <ScalarProperty Name="braName" ColumnName="braName" />
+                <ScalarProperty Name="braID" ColumnName="braID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblPackings">
+            <EntityTypeMapping TypeName="MedaModel.tblPacking">
+              <MappingFragment StoreEntitySet="tblPacking">
+                <ScalarProperty Name="pacTherapArea" ColumnName="pacTherapArea" />
+                <ScalarProperty Name="braID" ColumnName="braID" />
+                <ScalarProperty Name="pacName" ColumnName="pacName" />
+                <ScalarProperty Name="pacID" ColumnName="pacID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblPrimaryImports">
+            <EntityTypeMapping TypeName="MedaModel.tblPrimaryImport">
+              <MappingFragment StoreEntitySet="tblPrimaryImport">
+                <ScalarProperty Name="pimCountry" ColumnName="pimCountry" />
+                <ScalarProperty Name="pimWholesales" ColumnName="pimWholesales" />
+                <ScalarProperty Name="pimNetSales" ColumnName="pimNetSales" />
+                <ScalarProperty Name="pimGrossSales" ColumnName="pimGrossSales" />
+                <ScalarProperty Name="pimQuantity" ColumnName="pimQuantity" />
+                <ScalarProperty Name="yeaID" ColumnName="yeaID" />
+                <ScalarProperty Name="monID" ColumnName="monID" />
+                <ScalarProperty Name="pimPacking" ColumnName="pimPacking" />
+                <ScalarProperty Name="pimID" ColumnName="pimID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblPrimaryPackings">
+            <EntityTypeMapping TypeName="MedaModel.tblPrimaryPacking">
+              <MappingFragment StoreEntitySet="tblPrimaryPacking">
+                <ScalarProperty Name="pimPacking" ColumnName="pimPacking" />
+                <ScalarProperty Name="pacID" ColumnName="pacID" />
+                <ScalarProperty Name="ppaID" ColumnName="ppaID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblPrimaryWholesales">
+            <EntityTypeMapping TypeName="MedaModel.tblPrimaryWholesale">
+              <MappingFragment StoreEntitySet="tblPrimaryWholesale">
+                <ScalarProperty Name="pimCountry" ColumnName="pimCountry" />
+                <ScalarProperty Name="pimWholesale" ColumnName="pimWholesale" />
+                <ScalarProperty Name="whsID" ColumnName="whsID" />
+                <ScalarProperty Name="piwID" ColumnName="piwID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblWholesales">
+            <EntityTypeMapping TypeName="MedaModel.tblWholesale">
+              <MappingFragment StoreEntitySet="tblWholesale">
+                <ScalarProperty Name="ctrID" ColumnName="ctrID" />
+                <ScalarProperty Name="whsName" ColumnName="whsName" />
+                <ScalarProperty Name="whsID" ColumnName="whsID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Countries">
+            <EntityTypeMapping TypeName="MedaModel.Country">
+              <MappingFragment StoreEntitySet="Country">
+                <ScalarProperty Name="country1" ColumnName="country" />
+                <ScalarProperty Name="country_id" ColumnName="country_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Districts">
+            <EntityTypeMapping TypeName="MedaModel.District">
+              <MappingFragment StoreEntitySet="District">
+                <ScalarProperty Name="country_id" ColumnName="country_id" />
+                <ScalarProperty Name="district1" ColumnName="district" />
+                <ScalarProperty Name="district_id" ColumnName="district_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Products">
+            <EntityTypeMapping TypeName="MedaModel.Product">
+              <MappingFragment StoreEntitySet="Product">
+                <ScalarProperty Name="TargetStatus" ColumnName="TargetStatus" />
+                <ScalarProperty Name="THERAP_AREA" ColumnName="THERAP_AREA" />
+                <ScalarProperty Name="Brand" ColumnName="Brand" />
+                <ScalarProperty Name="brand_id" ColumnName="brand_id" />
+                <ScalarProperty Name="Packing" ColumnName="Packing" />
+                <ScalarProperty Name="packing_id" ColumnName="packing_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Regions">
+            <EntityTypeMapping TypeName="MedaModel.Region">
+              <MappingFragment StoreEntitySet="Region">
+                <ScalarProperty Name="country_id" ColumnName="country_id" />
+                <ScalarProperty Name="district_id" ColumnName="district_id" />
+                <ScalarProperty Name="city" ColumnName="city" />
+                <ScalarProperty Name="city_id" ColumnName="city_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vwPrimaryMissingPackings">
+            <EntityTypeMapping TypeName="MedaModel.vwPrimaryMissingPacking">
+              <MappingFragment StoreEntitySet="vwPrimaryMissingPacking">
+                <ScalarProperty Name="pimPacking" ColumnName="pimPacking" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vwPrimaryMissingWholesales">
+            <EntityTypeMapping TypeName="MedaModel.vwPrimaryMissingWholesale">
+              <MappingFragment StoreEntitySet="vwPrimaryMissingWholesale">
+                <ScalarProperty Name="pimCountry" ColumnName="pimCountry" />
+                <ScalarProperty Name="pimWholesales" ColumnName="pimWholesales" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
